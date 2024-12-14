@@ -1,5 +1,5 @@
 class Items:
-    def __init__(self, location, identifier, category, flavortext):
+    def __init__(self, location, identifier, category, flavortext, name):
         # items need to have the following variables:
         # locations, which should list places they are commonly found
         # id, which should give in game id
@@ -11,6 +11,7 @@ class Items:
         self._id = identifier
         self._category = category
         self._description = flavortext
+        self._name = name
         
         
     # will make various functions to return the class's variables
@@ -28,3 +29,6 @@ class Items:
     
     def give_description(self):
         return self._description
+    
+    def give_name(self):
+        return self._name
