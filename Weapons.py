@@ -53,6 +53,6 @@ class Weapons(Items):
         for i in list_weapons:
             the_strongest=self.compare(i)
             
-        return i
+        return the_strongest
     
     
