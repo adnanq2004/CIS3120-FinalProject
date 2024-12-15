@@ -27,7 +27,7 @@ class Weapons(Items):
             elif (self.give_damage()<other.give_damage()):
                 return other
             else:
-                return "they are equal"
+                return self
         
         # check if both are shields
         if (self.give_damage() == 0 and other.give_damage() == 0):
@@ -36,7 +36,7 @@ class Weapons(Items):
             elif (self.give_defense()<other.give_defense()):
                 return other
             else:
-                return "they are equal"
+                return self
             
         return 0
         

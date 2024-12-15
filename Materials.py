@@ -20,6 +20,6 @@ class Materials(Items):
         elif self.give_hearts() < other.give_hearts():
             return other
         else:
-            return 0
+            return self
         
     
