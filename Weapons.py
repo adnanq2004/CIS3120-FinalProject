@@ -48,6 +48,10 @@ class Weapons(Items):
         # again, no failsafe if any element in list_weapons is not the same type as self. idk what to do until that situation happens
         
         # temporarily setting self as strongest
+        
+        # warning about use case:
+        # generally should be like: list_weapons[0].compare_many(list_weapons)
+        
         the_strongest=self
         
         for i in list_weapons:
