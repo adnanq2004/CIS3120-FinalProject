@@ -7,7 +7,10 @@ class Items:
         # description, which should give in game flavor text
         
         #normally, I wouldn't add the underscore before the variables, but will do so now, because good practice.
-        self._location = location
+        if (location == None):
+            self._location = []
+        else:
+            self._location = location
         self._id = identifier
         self._category = category
         self._description = flavortext

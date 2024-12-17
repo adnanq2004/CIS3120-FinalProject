@@ -7,8 +7,17 @@ class Weapons(Items):
         # damage, which should give the base amount of damage
         # defense, which should give the base amount of defense
         
-        self._damage=damage
-        self._defense=defense
+        # hopefully, this can get rid of the issue with arrows
+        
+        
+        if (damage == None):
+            self._damage=0
+        else:
+            self._damage=damage
+        if (defense == None):
+            self._defense=0
+        else:
+            self._defense=defense
         
     def give_damage(self):
         return self._damage
@@ -21,11 +30,9 @@ class Weapons(Items):
     
     def compare(self, other):
         # check if one is an arrow
-        # i recognize this is poor error handlement, there could be another issue later on with similar circumstances, or if both things being compared are arrows.
-        # the hope is that, an arrow will just always be discarded immediately. Or, if the options are only arrows, then it will still give an arrow without a real error message
-        if (self.give_defense == 0 and self.give_damage == 0):
+        if (self.give_defense == None or self.give_damage == None):
             return other
-        if (other.give_defense == 0 and other.give_damage == 0):
+        if (other.give_defense == None or other.give_damage == None):
             return self
         
         
@@ -63,6 +70,9 @@ class Weapons(Items):
         
         the_strongest=list_weapons[0]
         for i in range(1,len(list_weapons)+1):
+            # for some reason, this is producing an int object instead of a Weapons object when the one-hit-obliterator is compared to an arrow
+            # ????
+            print("=======", list_weapons[i].give_damage())
             the_strongest = the_strongest.compare(list_weapons[i])
             print(i, the_strongest)
             print(i, the_strongest.give_name())
