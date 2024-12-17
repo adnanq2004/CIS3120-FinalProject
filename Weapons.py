@@ -50,7 +50,7 @@ class Weapons(Items):
                 return self
         
         # check if both are shields
-        if (self.give_damage() == 0 & other.give_damage() == 0):
+        if (self.give_damage() == 0 and other.give_damage() == 0):
             if (self.give_defense()>other.give_defense()):
                 return self
             elif (self.give_defense()<other.give_defense()):

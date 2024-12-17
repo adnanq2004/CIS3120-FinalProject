@@ -21,3 +21,16 @@ class Food(Items):
             return other
         else:
             return self
+        
+    def compare_many(self, list_food):
+        
+        the_strongest=list_food[0]
+        
+        
+        for i in list_food:
+            the_strongest=the_strongest.compare_hearts(i)
+            
+        return the_strongest
+    
+    def give_info(self):
+        print(f"Great! This food item is {the_food.give_name()}, which heals {the_food.give_hearts()} hearts and has the effect {the_food.give_effect()}")
