@@ -33,4 +33,4 @@ class Food(Items):
         return the_strongest
     
     def give_info(self):
-        print(f"Great! This food item is {the_food.give_name()}, which heals {the_food.give_hearts()} hearts and has the effect {the_food.give_effect()}")
+        print(f"Great! This food item is {self.give_name()}, which heals {self.give_hearts()} hearts and has the effect {self.give_effect()}")

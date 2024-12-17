@@ -22,4 +22,15 @@ class Materials(Items):
         else:
             return self
         
+    def compare_many(self, list_mates):
+        
+        the_strongest=list_mates[0]
+        
+        
+        for i in list_mates:
+            the_strongest=the_strongest.compare_hearts(i)
+            
+        return the_strongest
     
+    def give_info(self):
+        print(f"Great! This material item is {self.give_name()}, which heals {self.give_hearts()} hearts and has the effect {self.give_effect()}")

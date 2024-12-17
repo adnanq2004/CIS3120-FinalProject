@@ -35,17 +35,3 @@ class Items:
     
     def give_name(self):
         return self._name
-    
-    
-    def compare_many(self, list_mates):
-        
-        the_strongest=list_mates[0]
-        
-        
-        for i in list_mates:
-            the_strongest=the_strongest.compare_hearts(i)
-            
-        return the_strongest
-    
-    def give_info(self):
-        print(f"Great! This food item is {the_food.give_name()}, which heals {the_food.give_hearts()} hearts and has the effect {the_food.give_effect()}")
