@@ -20,6 +20,15 @@ class Weapons(Items):
     # or comparing damage and defense, and saying the two can't be compared because one is a weapon and one is a shield
     
     def compare(self, other):
+        # check if one is an arrow
+        # i recognize this is poor error handlement, there could be another issue later on with similar circumstances, or if both things being compared are arrows.
+        # the hope is that, an arrow will just always be discarded immediately. Or, if the options are only arrows, then it will still give an arrow without a real error message
+        if (self.give_defense == 0 and self.give_damage == 0):
+            return other
+        if (other.give_defense == 0 and other.give_damage == 0):
+            return self
+        
+        
         # check if both are shields
         if (self.give_defense() == 0 and other.give_defense() == 0):
             if (self.give_damage()>other.give_damage()):
@@ -52,11 +61,18 @@ class Weapons(Items):
         # warning about use case:
         # generally should be like: list_weapons[0].compare_many(list_weapons)
         
-        the_strongest=self
+        the_strongest=list_weapons[0]
+        for i in range(1,len(list_weapons)+1):
+            the_strongest = the_strongest.compare(list_weapons[i])
+            print(i, the_strongest)
+            print(i, the_strongest.give_name())
         
-        for i in list_weapons:
-            the_strongest=self.compare(i)
-            
         return the_strongest
+        
+#         for i in list_weapons:
+#             the_strongest=the_strongest.compare(i)
+#             print(the_strongest.give_name())
+            
+#         return the_strongest
     
     
