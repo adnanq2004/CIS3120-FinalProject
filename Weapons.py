@@ -10,14 +10,18 @@ class Weapons(Items):
         # hopefully, this can get rid of the issue with arrows
         
         
-        if (damage == None):
-            self._damage=0
-        else:
-            self._damage=damage
-        if (defense == None):
-            self._defense=0
-        else:
-            self._defense=defense
+        # if (damage is None):
+        #     self._damage=0
+        # else:
+        #     self._damage=damage
+        # if (defense is None):
+        #     self._defense=0
+        # else:
+        #     self._defense=defense
+        
+        
+        self._damage=damage
+        self._defense=defense
         
     def give_damage(self):
         return self._damage
@@ -30,10 +34,10 @@ class Weapons(Items):
     
     def compare(self, other):
         # check if one is an arrow
-        if (self.give_defense == None or self.give_damage == None):
-            return other
-        if (other.give_defense == None or other.give_damage == None):
-            return self
+        # if (self.give_defense == None or self.give_damage == None):
+        #     return other
+        # if (other.give_defense == None or other.give_damage == None):
+        #     return self
         
         
         # check if both are shields
@@ -46,7 +50,7 @@ class Weapons(Items):
                 return self
         
         # check if both are shields
-        if (self.give_damage() == 0 and other.give_damage() == 0):
+        if (self.give_damage() == 0 & other.give_damage() == 0):
             if (self.give_defense()>other.give_defense()):
                 return self
             elif (self.give_defense()<other.give_defense()):
@@ -69,20 +73,11 @@ class Weapons(Items):
         # generally should be like: list_weapons[0].compare_many(list_weapons)
         
         the_strongest=list_weapons[0]
-        for i in range(1,len(list_weapons)+1):
-            # for some reason, this is producing an int object instead of a Weapons object when the one-hit-obliterator is compared to an arrow
-            # ????
-            print("=======", list_weapons[i].give_damage())
-            the_strongest = the_strongest.compare(list_weapons[i])
-            print(i, the_strongest)
-            print(i, the_strongest.give_name())
         
-        return the_strongest
         
-#         for i in list_weapons:
-#             the_strongest=the_strongest.compare(i)
-#             print(the_strongest.give_name())
+        for i in list_weapons:
+            the_strongest=the_strongest.compare(i)
             
-#         return the_strongest
+        return the_strongest
     
     
