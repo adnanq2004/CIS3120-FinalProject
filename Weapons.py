@@ -7,19 +7,6 @@ class Weapons(Items):
         # damage, which should give the base amount of damage
         # defense, which should give the base amount of defense
         
-        # hopefully, this can get rid of the issue with arrows
-        
-        
-        # if (damage is None):
-        #     self._damage=0
-        # else:
-        #     self._damage=damage
-        # if (defense is None):
-        #     self._defense=0
-        # else:
-        #     self._defense=defense
-        
-        
         self._damage=damage
         self._defense=defense
         
@@ -33,14 +20,8 @@ class Weapons(Items):
     # or comparing damage and defense, and saying the two can't be compared because one is a weapon and one is a shield
     
     def compare(self, other):
-        # check if one is an arrow
-        # if (self.give_defense == None or self.give_damage == None):
-        #     return other
-        # if (other.give_defense == None or other.give_damage == None):
-        #     return self
         
-        
-        # check if both are shields
+        # check if both are swords
         if (self.give_defense() == 0 and other.give_defense() == 0):
             if (self.give_damage()>other.give_damage()):
                 return self
