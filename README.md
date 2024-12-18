@@ -1,5 +1,7 @@
 # CIS3120-FinalProject
 
+Video Presentation: https://youtu.be/LszoxwwYh0A
+
 ## What is this project?
 
 In this project, I performed various analytics on data I gathered from an API called "Hyrule-Compendium-API". https://github.com/gadhagod/Hyrule-Compendium-API
