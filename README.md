@@ -2,7 +2,7 @@
 
 ## What is this project?
 
-In this project, I performed various analytics on data I gathered from an API called "Hyrule-Compendium-API". 
+In this project, I performed various analytics on data I gathered from an API called "Hyrule-Compendium-API". https://github.com/gadhagod/Hyrule-Compendium-API
 
 I made use of Python libraries such as Pandas and Matplotlib to perform analytical operations on data, as well as Object Oriented Programming to create parent and child classes to better manipulate data.
 
